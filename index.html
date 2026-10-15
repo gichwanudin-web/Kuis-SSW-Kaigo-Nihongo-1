@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Bahasa Jepang Kaigo (Test 1)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .progress-indicator {
+            text-align: center;
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .question-box {
+            display: none;
+        }
+        .question-box.active {
+            display: block;
+        }
+        .dialogue {
+            background: #eef2f7;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .options label {
+            display: block;
+            margin: 10px 0;
+            cursor: pointer;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fff;
+            font-size: 15px;
+            transition: all 0.2s ease;
+        }
+        .options label:active {
+            background: #e9ecef;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        button {
+            flex: 1;
+            padding: 12px;
+            background: #3498db;
+            color: white;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        button.secondary {
+            background: #95a5a6;
+        }
+        button.secondary:hover {
+            background: #7f8c8d;
+        }
+        button.success {
+            background: #27ae60;
+        }
+        button.success:hover {
+            background: #219150;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f8f5;
+            border: 1px solid #a3e4d7;
+            border-radius: 8px;
+            display: none;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+            color: #117a65;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>介護日本語テスト 1 (Acak)</h1>
+    <div class="progress-indicator" id="progressIndicator">Soal 1 dari 15</div>
+    
+    <form id="quizForm">
+
+        <!-- SOAL 1 -->
+        <div class="question-box" data-id="1">
+            <p><strong>【問題】 (Soal 1)</strong></p>
+            <div class="dialogue">
+                佐藤さん：髪を拭(ふ)いてもらって、気持(きも)ちが良(よ)かったです。<br>
+                介護職：髪(かみ)が少(すこ)しぬれていますから、ドライヤーで乾(かわ)かしましょうか。<br>
+                佐藤さん：自分(じぶん)でやります。<br>
+                介護職：分(わ)かりました。髪(かみ)をとかしましょうか。<br>
+                佐藤さん：はい、お願(ねが)いします。<br>
+                介護職：分(わ)かりました。<br><br>
+                <strong>問題：会話の内容で、正しくないものを選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q1" data-ans="wrong"> ① 介護職は、髪(かみ)を拭(ふ)きました。</label>
+                <label><input type="radio" name="q1" data-ans="wrong"> ② 佐藤さんは、自分(じぶん)で髪(かみ)を乾(かわ)かしました。</label>
+                <label><input type="radio" name="q1" data-ans="wrong"> ③ 介護職は、髪(かみ)をとかしました。</label>
+                <label><input type="radio" name="q1" data-ans="correct"> ④ 佐藤さんは、自分(じぶん)で髪(かみ)をとかしました。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 2 -->
+        <div class="question-box" data-id="2">
+            <p><strong>【問題】 (Soal 2)</strong></p>
+            <div class="dialogue">
+                介護職：鈴木さんの食事(しょくじ)の介護(かいご)が終(お)わりました。<br>
+                リーダー：お疲れ(つかれ)様(さま)です。鈴木さんは、食事(しょくじ)を全部(ぜんぶ)食べましたか。<br>
+                介護職：はい、全部(ぜんぶ)食べました。鈴木さんは、最近(さいきん)、お茶やみそ汁(しる)を飲むと、むせることが有(あ)ります。<br>
+                リーダー：そうですか。誤嚥(ごえん)に気(き)を付(つ)けて下(くだ)さい。とろみをつけて下(くだ)さい。食べた量(りょう)は、必(かなら)ず記録(きろく)して下(くだ)さいね。<br>
+                介護職：はい、記録(きろく)します。<br><br>
+                <strong>問題：会話の内容で正(ただ)しいものを選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q2" data-ans="wrong"> ① 鈴木さんは、食事(しょくじ)を残(のこ)しました。</label>
+                <label><input type="radio" name="q2" data-ans="correct"> ② 鈴木さんは、お茶やみそ汁(しる)を飲むと、よくむせます。</label>
+                <label><input type="radio" name="q2" data-ans="wrong"> ③ 鈴木さんは、みそ汁(しる)にとろみをつけて、飲みます。</label>
+                <label><input type="radio" name="q2" data-ans="wrong"> ④ 鈴木さんは、食べた量(りょう)を記録(きろく)します。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 3 -->
+        <div class="question-box" data-id="3">
+            <p><strong>【問題】 (Soal 3)</strong></p>
+            <div class="dialogue">
+                介護職：佐藤さん、食事(しょくじ)は終(お)わりですね。もう少し(もうすこし)飲み物(のみもの)はいかがですか。<br>
+                佐藤さん：はい、いただきます。<br>
+                介護職：温(あたた)かい麦茶(むぎちゃ)をお持(も)ちしましょうか。<br>
+                佐藤さん：いいえ、冷(つめ)たい紅茶(こうちゃ)が飲(の)みたいです。<br>
+                介護職：分(わ)かりました。じゃあ、＿＿＿＿＿。<br>
+                佐藤さん：ありがとう。<br><br>
+                <strong>問題：じゃあ、＿＿＿＿＿。の中(なか)に入(はい)る言葉(ことば)を選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q3" data-ans="correct"> ① 冷(つめ)たい紅茶(こうちゃ)をもって行(い)きますね。</label>
+                <label><input type="radio" name="q3" data-ans="wrong"> ② 温(あたた)かい紅茶(こうちゃ)をもって行(い)きますね。</label>
+                <label><input type="radio" name="q3" data-ans="wrong"> ③ 温(あたた)かい紅茶(こうちゃ)をもって来(き)ますね。</label>
+                <label><input type="radio" name="q3" data-ans="wrong"> ④ 冷(つめ)たい紅茶(こうちゃ)をもって来(き)ますね。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 4 -->
+        <div class="question-box" data-id="4">
+            <p><strong>【問題】 (Soal 4)</strong></p>
+            <div class="dialogue">
+                介護職：あまり食べていませんね。<br>
+                佐藤さん：右手(みぎて)少(すこ)し痛(いた)くて、はしが上手(うま)く持(も)てません。<br>
+                介護職：右手(みぎて)痛(いた)いんですね。お手伝(てつだ)いしましょうか。<br>
+                佐藤さん：大丈夫(だいじょうぶ)です。スプーンで食べますから。スプーンを持(も)って来(き)て下(くだ)さい。<br>
+                介護職：分(わ)かりました。スプーンを持(も)って来(き)ますね。<br><br>
+                <strong>問題：会話の内容で正(ただ)しいものを選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q4" data-ans="wrong"> ① 佐藤さんは、ご飯(ごはん)を全部(ぜんぶ)食べました。</label>
+                <label><input type="radio" name="q4" data-ans="correct"> ② 佐藤さんは自分(じぶん)でご飯(ごはん)を食べます。</label>
+                <label><input type="radio" name="q4" data-ans="wrong"> ③ 佐藤さんは、介護職(かいごしょく)に手伝(てつだ)ってもらって、ご飯(ごはん)を食べます。</label>
+                <label><input type="radio" name="q4" data-ans="wrong"> ④ 佐藤さんは、左手(ひだりて)ではしを持(も)ちます。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 5 -->
+        <div class="question-box" data-id="5">
+            <p><strong>【問題】 (Soal 5)</strong></p>
+            <div class="dialogue">
+                介護職：鈴木さん 左足(ひだりあし)はどうですか。<br>
+                鈴木さん：もう、あまり痛(いた)くないよ。<br>
+                介護職：そうですか。じゃあ、少(すこ)し歩(ある)く練習(れんしゅう)をしましょう。杖(つえ)をどうぞ。<br>
+                鈴木さん：ありがとう。<br>
+                介護職：私(わたし)が声(こえ)をかけますから、ゆっくり歩(ある)きましょう。はじめに、杖(つえ)を前(まえ)に出(だ)して、次(つぎ)に痛(いた)い足(あし)、そして元気(げんき)な足(あし)です。<br>
+                鈴木さん：左(ひだり)、杖(つえ)、右(みぎ)だね。<br>
+                介護職：いいえ、＿＿＿＿＿。<br><br>
+                <strong>問題：いいえ、＿＿＿＿＿。の中(なか)に入(はい)る言葉(ことば)を選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q5" data-ans="wrong"> ① 杖(つえ)、右足(みぎあし)、左足(ひだりあし)ですよ。</label>
+                <label><input type="radio" name="q5" data-ans="wrong"> ② 右足(みぎあし)、杖(つえ)、左足(ひだりあし)、ですよ。</label>
+                <label><input type="radio" name="q5" data-ans="wrong"> ③ 左足(ひだりあし)、右足(みぎあし)、杖(つえ)、ですよ。</label>
+                <label><input type="radio" name="q5" data-ans="correct"> ④ 杖(つえ)、左足(ひだりあし)、右足(みぎあし)、ですよ。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 6 -->
+        <div class="question-box" data-id="6">
+            <p><strong>【問題】 (Soal 6)</strong></p>
+            <div class="dialogue">
+                介護職：佐藤さん、あしたの昼(ひる)ご飯(ごはん)は、メニューが選(えら)べますよ。<br>
+                佐藤さん：そうですか。うれしいです。毎日(まいにち)選(えら)べたらもっとうれしいね。<br>
+                介護職：一(いち)か月に一(いっ)回(かい)だけで、申(もう)し訳(わけ)ありません。おかずは、天(てん)ぷらかハンバーグです。どちらがいいですか。<br>
+                佐藤さん：私(わたし)は天(てん)ぷらが食べたいです。<br>
+                介護職：わかりました。デザートに、プリンかゼリーが選(えら)べます。<br>
+                佐藤さん：プリンはあまり好(す)きではありません。<br>
+                介護職：そうですか。じゃ、ゼリーですね。<br>
+                佐藤さん：ええ。よろしくお願(ねが)いします。楽(たの)しみにしています。<br><br>
+                <strong>問題：会話の内容で、正(ただ)しいものを選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q6" data-ans="correct"> ① 佐藤さんは、あしたゼリーを食べます。</label>
+                <label><input type="radio" name="q6" data-ans="wrong"> ② 佐藤さんは、あしたハンバーグを食べます。</label>
+                <label><input type="radio" name="q6" data-ans="wrong"> ③ 佐藤さんは、プリンが好(す)きです。</label>
+                <label><input type="radio" name="q6" data-ans="wrong"> ④ 佐藤さんは、毎日(まいにち)メニューを選ぶ(えらぶ)ことが出来ます。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 7 -->
+        <div class="question-box" data-id="7">
+            <p><strong>【問題】 (Soal 7)</strong></p>
+            <div class="dialogue">
+                介護職：佐藤さん、パジャマに着替(きが)える前(まえ)にお尻(おしり)をきれいにしてしましょうか？<br>
+                佐藤さん：はい、お願(ねが)いします。<br>
+                介護職：じゃ、ズボンを下(さ)げてもらえませんか。<br>
+                佐藤さん：はい。<br>
+                介護職：お尻(おしり)がちょっと赤(あか)くなっていますね。痛(いた)いですか？<br>
+                佐藤さん：はい、少(すこ)し痛(いた)いです。<br>
+                介護職：そうですか。看護師(かんごし)に連絡(れんらく)しておきますね。<br><br>
+                <strong>問題：会話の内容で正(ただ)しいものを選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q7" data-ans="wrong"> ① 佐藤さんは、パジャマに着替(きが)えました。</label>
+                <label><input type="radio" name="q7" data-ans="correct"> ② 佐藤さんは、自分(じぶん)でズボンを下(さ)げました。</label>
+                <label><input type="radio" name="q7" data-ans="wrong"> ③ 佐藤さんは、お尻(おしり)が赤(あか)くないです。</label>
+                <label><input type="radio" name="q7" data-ans="wrong"> ④ 佐藤さんは、看護師(かんごし)に連絡(れんらく)します。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 8 -->
+        <div class="question-box" data-id="8">
+            <p><strong>【問題】 (Soal 8)</strong></p>
+            <div class="dialogue">
+                リーダー：今日は鈴木さんの入浴日(にゅうよくび)です。鈴木さんの入浴(にゅうよく)介護(かいご)をお願(ねが)いします。<br>
+                介護職：はい。でも、鈴木さんは、昨日(きのう)、少(すこ)し咳(せき)が出(で)ると言(い)いました。大丈夫(だいじょうぶ)ですか。<br>
+                リーダー：看護師(かんごし)に確認(かくにん)して貰(もら)いましたから大丈夫(だいじょうぶ)です。でも、鈴木さんに体調(たいちょう)を聞(き)いて下(くだ)さい。<br>
+                介護職：はい。＿＿＿＿＿。<br><br>
+                <strong>問題：はい。＿＿＿＿＿。の中(なか)に入(はい)る言葉(ことば)を選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q8" data-ans="wrong"> ① 看護師(かんごし)に確認(かくにん)します。</label>
+                <label><input type="radio" name="q8" data-ans="wrong"> ② リーダーに確認(かくにん)します。</label>
+                <label><input type="radio" name="q8" data-ans="correct"> ③ 鈴木さんに確認(かくにん)します。</label>
+                <label><input type="radio" name="q8" data-ans="wrong"> ④ 介護職(かいごしょく)に確認(かくにん)します。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 9 -->
+        <div class="question-box" data-id="9">
+            <p><strong>【問題】 (Soal 9)</strong></p>
+            <div class="dialogue">
+                介護職：佐藤さん、あまり食べていませんね。<br>
+                佐藤さん：おいしくないんです。<br>
+                介護職：そうですか。佐藤さんは、料理(りょうり)が上手(じょうず)でしたね。明日の昼(あしたのひる)ご飯(ごはん)を、一緒(いっしょ)に作り(つくり)ましょうか。<br>
+                佐藤さん：うれしいわ。おかずは野菜(やさい)の煮物(にもの)と焼(や)き魚(さかな)を和(つく)りましょう。<br>
+                介護職：いいですね。私(わたし)も楽(たの)しみにしています。<br><br>
+                <strong>問題：会話の内容で、正(ただ)しいものを選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q9" data-ans="wrong"> ① あしたの昼(ひる)ご飯(ごはん)は、佐藤さんが一人(ひとり)で作(つく)ります。</label>
+                <label><input type="radio" name="q9" data-ans="correct"> ② あしたの昼(ひる)ご飯(ごはん)は、野菜(やさい)の煮物(にもの)を作(つく)ります。</label>
+                <label><input type="radio" name="q9" data-ans="wrong"> ③ あしたの昼(ひる)ご飯(ごはん)は、介護職(かいごしょく)が一人(ひとり)で作(つく)ります。</label>
+                <label><input type="radio" name="q9" data-ans="wrong"> ④ あしたの昼(ひる)ご飯(ごはん)は、魚(さかな)の煮付(にと)けを作(つく)ります。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 10 -->
+        <div class="question-box" data-id="10">
+            <p><strong>【問題】 (Soal 10)</strong></p>
+            <div class="dialogue">
+                鈴木さん：今日は洗濯物(せんたくもの)がたくさんあるね。<br>
+                介護職：はい。今日は、パジャマを洗濯(せんたく)する日(ひ)なんです。<br>
+                鈴木さん：大変(たいへん)だね。私(わたし)は、洗濯(せんたく)するのが上手(じょうず)だよ。<br>
+                介護職：そうですか。＿＿＿＿＿。<br><br>
+                <strong>問題：＿＿＿＿＿。の中(なか)に入(はい)る言葉(ことば)を選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q10" data-ans="wrong"> ① じゃ、お手伝(てつだ)いしましょうか。</label>
+                <label><input type="radio" name="q10" data-ans="wrong"> ② じゃ、明日(あした)、パジャマを洗濯(せんたく)しましょう。</label>
+                <label><input type="radio" name="q10" data-ans="wrong"> ③ じゃ、洗濯物(せんたくもの)のたたみ方(かた)を教(おし)えてもらえませんか。</label>
+                <label><input type="radio" name="q10" data-ans="correct"> ④ じゃ、洗濯(せんたく)のやり方(かた)を教(おし)えてもらえませんか。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 11 -->
+        <div class="question-box" data-id="11">
+            <p><strong>【問題】 (Soal 11)</strong></p>
+            <div class="dialogue">
+                佐藤さん：テーブルを拭(ふ)きますね。<br>
+                介護職：おねがいします。<br>
+                佐藤さん：きれいになると、気持(きも)ちがいいですから<br>
+                介護職：そうですね。＿＿＿＿＿。<br><br>
+                <strong>問題：＿＿＿＿＿。の中(なか)に入(はい)る言葉(ことば)を選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q11" data-ans="wrong"> ① テーブルを拭(ふ)きましたよ。</label>
+                <label><input type="radio" name="q11" data-ans="wrong"> ② テーブルが汚(よご)れていますよ。</label>
+                <label><input type="radio" name="q11" data-ans="wrong"> ③ テーブルをきれいにしましょう。</label>
+                <label><input type="radio" name="q11" data-ans="correct"> ④ テーブルがきれいに(綺麗に)なりましたね。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 12 -->
+        <div class="question-box" data-id="12">
+            <p><strong>【問題】 (Soal 12)</strong></p>
+            <div class="dialogue">
+                介護職：鈴木さん、おかえりなさい。散歩(さんぽ)はどうでしたか<br>
+                鈴木さん：うん、外(そと)は涼(すず)しくて気持(きも)ちが良(よ)かったよ。<br>
+                介護職：それは良(よ)かったですね。これから昼(ひる)ご飯(ごはん)ですからトイレに行(い)きませんか。<br>
+                鈴木さん：今(いま)は行(い)きたくないから、先(さき)に食堂(しょくどう)へ行(い)くよ。<br>
+                介護職：そうですか。でも食事(しょくじ)の前(まえ)にトイレに行(い)った方(ほう)が安心(あんしん)ですよ。<br>
+                鈴木さん：ううん、後(あと)でいいよ。<br>
+                介護職：はい、わかりました。<br><br>
+                <strong>問題：会話の内容で、正(ただ)しいものを選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q12" data-ans="wrong"> ① 鈴木さんは、これから散歩(さんぽ)に行(い)きます。</label>
+                <label><input type="radio" name="q12" data-ans="wrong"> ② 鈴木さんは、これからご飯(ごはん)を食べます。</label>
+                <label><input type="radio" name="q12" data-ans="correct"> ③ 鈴木さんは、これから食堂(しょくどう)へ行(い)きます。</label>
+                <label><input type="radio" name="q12" data-ans="wrong"> ④ 鈴木さんは、これからトイレに行(い)きます。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 13 -->
+        <div class="question-box" data-id="13">
+            <p><strong>【問題】 (Soal 13)</strong></p>
+            <div class="dialogue">
+                介護職：佐藤さん、おはようございます。<br>
+                佐藤さん：おはようございます。<br>
+                介護職：ご気分(きぶん)はいかがですか。<br>
+                佐藤さん：悪(わる)くないよ。<br>
+                介護職：良(よ)かったです。いいお天気(てんき)ですね。窓(まど)を開(あ)けて換気(かんき)をしましょうか。<br>
+                佐藤さん：そうですね。<br>
+                介護職：＿＿＿＿＿。<br><br>
+                <strong>問題：＿＿＿＿＿。の中(なか)に入(はい)る言葉(ことば)を選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q13" data-ans="correct"> ① じゃ、窓(まど)を開(あ)けますね。</label>
+                <label><input type="radio" name="q13" data-ans="wrong"> ② じゃ、今(いま)換気(かんき)しますね。</label>
+                <label><input type="radio" name="q13" data-ans="wrong"> ③ じゃ、佐藤さんが食堂(しょくどう)に行(い)ってる時(とき)に、窓(まど)を閉(し)めますね。</label>
+                <label><input type="radio" name="q13" data-ans="wrong"> ④ じゃ、佐藤さんが食堂(しょくどう)に行(い)ってる時(とき)に、換気(かんき)をしますね。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 14 -->
+        <div class="question-box" data-id="14">
+            <p><strong>【問題】 (Soal 14)</strong></p>
+            <div class="dialogue">
+                鈴木さん：トイレに行(い)きたいんだけど。<br>
+                介護職：わかりました。いっしょに行(い)きましょう。ベッドから起(お)き上(あ)がりましょうか。<br>
+                鈴木さん：お願(ねが)い。<br>
+                介護職：靴(くつ)をはきましょう。お手伝(てつだ)いしましょうか？<br>
+                鈴木さん：いいえ、ゆっくりやってみるよ。<br>
+                介護職：きれいに履(は)けましたね。<br>
+                鈴木さん：はい。<br>
+                介護職：じゃ、車椅子(くるまいす)に乗り(のり)ましょう。私(わたし)につかまって下(くだ)さい。<br><br>
+                <strong>問題：会話の内容で、正(ただ)しいものを選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q14" data-ans="wrong"> ① 鈴木さんは、一人(ひとり)で起(お)き上(あ)がりました。</label>
+                <label><input type="radio" name="q14" data-ans="correct"> ② 鈴木さんは、一人(ひとり)で靴(くつ)をはきました。</label>
+                <label><input type="radio" name="q14" data-ans="wrong"> ③ 鈴木さんは、一人(ひとり)で車椅子(くるまいす)に乗(の)りました。</label>
+                <label><input type="radio" name="q14" data-ans="wrong"> ④ 鈴木さんは、一人(ひとり)トイレに行(い)きました。</label>
+            </div>
+        </div>
+
+        <!-- SOAL 15 -->
+        <div class="question-box" data-id="15">
+            <p><strong>【問題】 (Soal 15)</strong></p>
+            <div class="dialogue">
+                介護職：お湯(おゆ)の温度(おんど)はいかがですか。<br>
+                鈴木さん：ちょっと熱(あつ)いよ。<br>
+                介護職：わかりました。＿＿＿＿＿。<br><br>
+                <strong>問題：＿＿＿＿＿。の中(なか)に入(はい)る言葉(ことば)を選(えら)んで下(くだ)さい。</strong>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="q15" data-ans="wrong"> ① ちょうどいい温度(おんど)で良(よ)かったです。</label>
+                <label><input type="radio" name="q15" data-ans="correct"> ② 少(すこ)し水(みず)を入れ(いれ)ますね。</label>
+                <label><input type="radio" name="q15" data-ans="wrong"> ③ もう少(すこ)しお風呂(ふろ)に入(はい)りたいですか。</label>
+                <label><input type="radio" name="q15" data-ans="wrong"> ④ 少(すこ)しお湯(おゆ)を入れ(いれ)ますね。</label>
+            </div>
+        </div>
+
+        <!-- Tombol Navigasi -->
+        <div class="nav-buttons">
+            <button type="button" id="prevBtn" class="secondary" onclick="changeStep(-1)" style="display:none;">Sebelumnya</button>
+            <button type="button" id="nextBtn" onclick="changeStep(1)">Selanjutnya</button>
+        </div>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    let questionList = [];
+    let currentIndex = 0;
+    const totalSteps = 15;
+
+    window.addEventListener('DOMContentLoaded', () => {
+        let form = document.getElementById('quizForm');
+        let boxes = Array.from(form.querySelectorAll('.question-box'));
+
+        // 1. Acak urutan soal (Fisher-Yates shuffle)
+        for (let i = boxes.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            form.appendChild(boxes[j]);
+            boxes.splice(j, 1);
+        }
+
+        // 2. Simpan urutan soal yang sudah diacak ke dalam array
+        questionList = Array.from(form.querySelectorAll('.question-box'));
+
+        // 3. Acak pilihan jawaban di setiap soal
+        questionList.forEach(box => {
+            let optionsContainer = box.querySelector('.options');
+            let labels = Array.from(optionsContainer.querySelectorAll('label'));
+            for (let i = labels.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                optionsContainer.appendChild(labels[j]);
+                labels.splice(j, 1);
+            }
+        });
+
+        // Tampilkan soal pertama
+        showStep(0);
+    });
+
+    function showStep(index) {
+        questionList.forEach((box, idx) => {
+            if (idx === index) {
+                box.classList.add('active');
+            } else {
+                box.classList.remove('active');
+            }
+        });
+
+        document.getElementById('progressIndicator').innerText = `Soal ${index + 1} dari ${totalSteps}`;
+
+        let prevBtn = document.getElementById('prevBtn');
+        prevBtn.style.display = (index === 0) ? 'none' : 'block';
+
+        let nextBtn = document.getElementById('nextBtn');
+        if (index === totalSteps - 1) {
+            nextBtn.innerText = "Selesaikan Kuis";
+            nextBtn.className = "success";
+            nextBtn.setAttribute("onclick", "checkAnswers()");
+        } else {
+            nextBtn.innerText = "Selanjutnya";
+            nextBtn.className = "";
+            nextBtn.setAttribute("onclick", "changeStep(1)");
+        }
+    }
+
+    function changeStep(n) {
+        currentIndex += n;
+        if (currentIndex < 0) currentIndex = 0;
+        if (currentIndex >= totalSteps) currentIndex = totalSteps - 1;
+        showStep(currentIndex);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function checkAnswers() {
+        let score = 0;
+
+        questionList.forEach(box => {
+            let selected = box.querySelector('input[type="radio"]:checked');
+            if (selected && selected.getAttribute('data-ans') === 'correct') {
+                score++;
+            }
+        });
+
+        document.querySelector('.nav-buttons').style.display = 'none';
+        questionList.forEach(b => b.classList.remove('active'));
+        document.getElementById('progressIndicator').style.display = 'none';
+
+        let resultDiv = document.getElementById('result');
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `🎉 Kuis Selesai!<br>Skor Anda: ${score} / ${totalSteps} Soal Benar!`;
+    }
+</script>
+
+</body>
+</html>
